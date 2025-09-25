@@ -1,0 +1,159 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    09/26/2025  05:27:26  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+G:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\main.obj TO .\Objects\lightdance PRINT (.\Listings\lightdance.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main.obj (MAIN)
+  G:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\lightdance (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0004H     UNIT         ?DT?MAIN
+                    000CH     0014H                  *** GAP ***
+            BIT     0020H.0   0000H.1   UNIT         ?BI?MAIN
+                    0020H.1   0000H.7                *** GAP ***
+            IDATA   0021H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     0018H                  *** GAP ***
+            CODE    001BH     0003H     ABSOLUTE     
+                    001EH     07E2H                  *** GAP ***
+            CODE    0800H     0648H     UNIT         ?CO?MAIN
+            CODE    0E48H     0059H     UNIT         ?PR?TIMER1_ISR?MAIN
+            CODE    0EA1H     004BH     UNIT         ?PR?_PLAYMUSIC?MAIN
+            CODE    0EECH     0015H     UNIT         ?PR?MAIN?MAIN
+            CODE    0F01H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0F0DH     000BH     UNIT         ?PR?TIMER1INIT?MAIN
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\lightdance (MAIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?PR?TIMER1_ISR?MAIN
+  +--> ?PR?_PLAYMUSIC?MAIN
+
+*** NEW ROOT ***************************************************
+
+?C_C51STARTUP
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN
+  +--> ?PR?TIMER1INIT?MAIN
+  +--> ?CO?MAIN
+  +--> ?PR?_PLAYMUSIC?MAIN
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  09/26/2025  05:27:26  PAGE 2
+
+
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\lightdance (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  C:0E48H         PUBLIC        Timer1_ISR
+  B:00A8H.7       PUBLIC        EA
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  C:0EA1H         PUBLIC        _PlayMusic
+  B:00B0H.4       PUBLIC        BEEP
+  C:0EECH         PUBLIC        main
+  C:0800H         PUBLIC        buzzer_music
+  D:0098H         PUBLIC        SCON
+  B:0020H.0       PUBLIC        play_flag
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  D:0008H         PUBLIC        note_count
+  B:00A8H.3       PUBLIC        ET1
+  C:0F0DH         PUBLIC        Timer1Init
+  D:008DH         PUBLIC        TH1
+  D:008BH         PUBLIC        TL1
+  B:0088H.6       PUBLIC        TR1
+  D:000AH         PUBLIC        music_ptr
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          TIMER1INIT
+  C:0F0DH         LINE#         14
+  C:0F0DH         LINE#         15
+  C:0F0DH         LINE#         16
+  C:0F10H         LINE#         17
+  C:0F13H         LINE#         18
+  C:0F15H         LINE#         19
+  C:0F17H         LINE#         20
+  -------         ENDPROC       TIMER1INIT
+  -------         PROC          _PLAYMUSIC
+  D:0004H         SYMBOL        p
+  C:0EA1H         LINE#         22
+  C:0EA5H         LINE#         23
+  C:0EA5H         LINE#         24
+  C:0EB2H         LINE#         25
+  C:0EB2H         LINE#         26
+  C:0EB4H         LINE#         27
+  C:0EB6H         LINE#         28
+  C:0EB9H         LINE#         30
+  C:0EB9H         LINE#         33
+  C:0EBBH         LINE#         34
+  C:0EC4H         LINE#         37
+  C:0ED0H         LINE#         38
+  C:0ED5H         LINE#         39
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  09/26/2025  05:27:26  PAGE 3
+
+
+  C:0EDAH         LINE#         40
+  C:0EE5H         LINE#         43
+  C:0EE9H         LINE#         45
+  C:0EEBH         LINE#         46
+  -------         ENDPROC       _PLAYMUSIC
+  -------         PROC          TIMER1_ISR
+  C:0E48H         LINE#         48
+  C:0E5BH         LINE#         51
+  C:0E65H         LINE#         52
+  C:0E70H         LINE#         55
+  C:0E72H         LINE#         58
+  C:0E7FH         LINE#         59
+  C:0E7FH         LINE#         61
+  C:0E8AH         LINE#         62
+  C:0E90H         LINE#         63
+  C:0E90H         LINE#         64
+  -------         ENDPROC       TIMER1_ISR
+  -------         PROC          MAIN
+  C:0EECH         LINE#         66
+  C:0EECH         LINE#         67
+  C:0EECH         LINE#         68
+  C:0EEFH         LINE#         69
+  C:0EF1H         LINE#         70
+  C:0EF9H         LINE#         71
+  C:0EFCH         LINE#         73
+  C:0EFFH         LINE#         74
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 070FH BYTE (88%) *
+******************************************************************************
+
+Program Size: data=13.1 xdata=0 code=1822
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
